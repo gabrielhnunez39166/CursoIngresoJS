@@ -34,5 +34,9 @@ function Materiales ()
 {
     let largo = document.getElementById("txtIdLargo").value;
     let ancho = document.getElementById("txtIdAncho").value;
-    let radio = document.getElementById("txtIdRadio").value;
+    let contrapiso = largo * ancho;
+    let cemento = contrapiso * 2;
+    let cal = contrapiso * 3;
+    let mensaje = "Se necesitan " + cemento + " bolsas de cemento y " + cal + " bolsas de cal.";
+    alert(mensaje)
 }
