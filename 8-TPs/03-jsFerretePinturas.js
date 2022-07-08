@@ -1,24 +1,40 @@
-/*3.	Para el departamento de Pinturas:
+/*
+Nuñez Hugo Gabriel
+TP 3
+
+3.	Para el departamento de Pinturas:
 A.	Al ingresar una temperatura en Fahrenheit debemos mostrar la temperatura en Centígrados con un mensaje concatenado (ej.: " 32 Fahrenheit son 0 centígrados").
 B.	Al ingresar una temperatura en Centígrados debemos mostrar la temperatura en Fahrenheit (ej.: "0  centígrados son 32 Fahrenheit ").
 */
 
 function FahrenheitCentigrados () 
 {
-    let temperaturaIngresada = document.getElementById("txtIdTemperatura").value;
+    let temperaturaIngresada;
+    let fahrenheit;
+    let fahrenheitCentigrados;
+    let mensaje;
+
+    temperaturaIngresada = document.getElementById("txtIdTemperatura").value;
     temperaturaIngresada = parseInt(temperaturaIngresada);
-    let fahrenheit = 32;
-    let fahrenheitCentigrados = temperaturaIngresada - fahrenheit;
-    let mensaje = "La temperatura en Fahrenheit es: " + fahrenheitCentigrados;
+    fahrenheit = 32;
+    fahrenheitCentigrados = temperaturaIngresada - fahrenheit;
+    mensaje = "La temperatura en Centigrados es: " + fahrenheitCentigrados;
+
     alert(mensaje);
 }
 
 function CentigradosFahrenheit () 
 {
-    let temperaturaIngresada = document.getElementById("txtIdTemperatura").value;
+    let temperaturaIngresada;
+    let fahrenheit;
+    let centigradosFahrenheit;
+    let mensaje;
+
+    temperaturaIngresada = document.getElementById("txtIdTemperatura").value;
     temperaturaIngresada = parseInt(temperaturaIngresada);
-    let fahrenheit = 32;
-    let centigradosFahrenheit = temperaturaIngresada + fahrenheit;
-    let mensaje = "La temperatura en Fahrenheit es: " + centigradosFahrenheit;
+    fahrenheit = 32;
+    centigradosFahrenheit = temperaturaIngresada + fahrenheit;
+    mensaje = "La temperatura en Fahrenheit es: " + centigradosFahrenheit;
+    
     alert(mensaje);
 }
