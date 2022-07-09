@@ -1,8 +1,31 @@
+/*
+Nuñez Hugo Gabriel
+Ejercicio InstruccionIf 06
+*/
+
 function mostrar()
 {
-	//tomo la edad  
-	alert("ok");
+	//Declaro las variables necesarias para el ejercicio.
+	let edad;
+	let mayorDeEdad;
+	let adolescente;
+	let ninio;
 
+	//Asigno el valor a las variables
+	edad = document.getElementById("txtIdEdad").value;
 
+	/*Los siguientes son los mensajes que se mostraran en el alerta ya que me
+	parece "mejor o mas legible" a la hora de escribir el If*/
+	mayorDeEdad = "La edad ingresada corresponde a una persona mayor de edad.";
+	adolescente = "La edad ingresada corresponde a una persona adolescente.";
+	ninio = "La edad ingresada corresponde a un niño";
 
-}//FIN DE LA FUNCIÓN
+	/*En vez de utilizar varios If por separado los dejo como If else ya que
+	es una "tecnica" para ordenar el codigo.*/
+	if (edad >= 18) {
+		alert(mayorDeEdad);	
+	} else if (edad >= 13 & edad <= 17) {
+		alert(adolescente);	
+	} else if (edad <= 12)
+		alert(ninio);
+}
