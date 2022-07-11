@@ -11,6 +11,7 @@ function mostrar()
 
 	//Asigno el valor correspondiente a las variables.
 	edad = document.getElementById("txtIdEdad").value;
+	edad = parseInt(edad);
 	edadAdolescente = "La edad ingresada corresponde a una persona adolescente.";
 
 	//Declaro un If para dar solucion al ejercicio.

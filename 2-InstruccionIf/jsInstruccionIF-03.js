@@ -12,6 +12,7 @@ function mostrar()
 
 	//Asigo el valor correspondiente a las variables.
 	edad = document.getElementById("txtIdEdad").value;
+	edad = parseInt(edad);
 	mayorDeEdad = "Usted es mayor de edad.";
 	menorDeEdad = "Usted es menor de edad.";
 

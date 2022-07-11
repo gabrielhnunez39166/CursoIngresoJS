@@ -11,6 +11,7 @@ function mostrar()
 	
 	//Asigno el valor a las variables.
 	edad = document.getElementById("txtIdEdad").value;
+	edad = parseInt(edad);
 	mensaje = "Niña bonita";
 
 	/*Mediante un If si la edad ingresada es igual a 15, muestro por alert la variable mensaje.*/

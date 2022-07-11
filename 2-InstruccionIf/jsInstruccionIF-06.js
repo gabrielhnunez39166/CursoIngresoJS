@@ -11,8 +11,9 @@ function mostrar()
 	let adolescente;
 	let ninio;
 
-	//Asigno el valor a las variables
+	//Asigno el valor a las variables y hago el parseo correspondiente.
 	edad = document.getElementById("txtIdEdad").value;
+	edad = parseInt(edad);
 
 	/*Los siguientes son los mensajes que se mostraran en el alerta ya que me
 	parece "mejor o mas legible" a la hora de escribir el If*/
