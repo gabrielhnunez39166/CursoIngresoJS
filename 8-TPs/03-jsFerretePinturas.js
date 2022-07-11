@@ -17,7 +17,7 @@ function FahrenheitCentigrados ()
     temperaturaIngresada = document.getElementById("txtIdTemperatura").value;
     temperaturaIngresada = parseInt(temperaturaIngresada);
     fahrenheit = 32;
-    fahrenheitCentigrados = temperaturaIngresada - fahrenheit;
+    fahrenheitCentigrados = (temperaturaIngresada - fahrenheit) * (5/9);
     mensaje = "La temperatura en Centigrados es: " + fahrenheitCentigrados;
 
     alert(mensaje);
@@ -33,7 +33,7 @@ function CentigradosFahrenheit ()
     temperaturaIngresada = document.getElementById("txtIdTemperatura").value;
     temperaturaIngresada = parseInt(temperaturaIngresada);
     fahrenheit = 32;
-    centigradosFahrenheit = temperaturaIngresada + fahrenheit;
+    centigradosFahrenheit = (temperaturaIngresada * (9 / 5)) + fahrenheit;
     mensaje = "La temperatura en Fahrenheit es: " + centigradosFahrenheit;
     
     alert(mensaje);
