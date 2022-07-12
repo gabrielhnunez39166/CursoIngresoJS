@@ -1,4 +1,8 @@
-/*4.	Para el departamento de iluminación:
+/*
+Nuñez Hugo Gabriel
+TP 4
+
+4.Para el departamento de iluminación:
 Tomando en cuenta que todas las lámparas están en oferta al mismo precio de $35 pesos final.
 A.	Si compra 6 o más  lamparitas bajo consumo tiene un descuento del 50%. 
 B.	Si compra 5  lamparitas bajo consumo marca "ArgentinaLuz" se hace un descuento del 40 % y si es de otra marca el descuento es del 30%.
@@ -10,5 +14,33 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  */
 function CalcularPrecio () 
 {
- 	
+    //Declaro las variables.
+ 	let lamparas;
+    let cantidadDeLamparas;
+    let descuento;
+    let marca;
+    let mensaje;
+
+    //Asigno el valor de las variables y parseo en el caso de ser necesario.
+    lamparas = 35;
+    cantidadDeLamparas = document.getElementById("txtIdCantidad").value;
+    cantidadDeLamparas = parseInt(cantidadDeLamparas);
+    marca = document.getElementById("Marca").value;
+
+    //Operaciones de descuento mediante un if.
+    if (cantidadDeLamparas >= 6){
+        descuento = (cantidadDeLamparas * lamparas) * 50 / 100;
+        mensaje = "El total a pagar es de: $" + descuento.toFixed(2);
+        document.getElementById("txtIdprecioDescuento").value = mensaje;
+
+    } else if (cantidadDeLamparas == 5 & marca == "ArgentinaLuz") {
+            descuento = (cantidadDeLamparas * lamparas) * 40 / 100;
+            mensaje = "El total a pagar es de: $" + descuento.toFixed(2);
+            document.getElementById("txtIdprecioDescuento").value = mensaje;
+        } else {
+            descuento = (cantidadDeLamparas * lamparas) * 30 / 100;
+            mensaje = "El total a pagar es de: $" + descuento.toFixed(2);
+            document.getElementById("txtIdprecioDescuento").value = mensaje;
+        }
+
 }

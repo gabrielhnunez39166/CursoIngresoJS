@@ -21,12 +21,13 @@ function mostrar()
 	adolescente = "La edad ingresada corresponde a una persona adolescente.";
 	ninio = "La edad ingresada corresponde a un niño";
 
-	/*En vez de utilizar varios If por separado los dejo como If else ya que
-	es una "tecnica" para ordenar el codigo.*/
+	/*En vez de utilizar varios if por separado los dejo como if else para ordenar el codigo.*/
 	if (edad >= 18) {
-		alert(mayorDeEdad);	
+		alert(mayorDeEdad);
+
 	} else if (edad >= 13 & edad <= 17) {
 		alert(adolescente);	
+
 	} else if (edad <= 12)
 		alert(ninio);
 }
