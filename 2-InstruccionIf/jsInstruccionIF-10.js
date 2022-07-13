@@ -8,8 +8,7 @@ Al presionar el Botón, asignar una nota RANDOM al examen y mostrar:
 "Vamos, la proxima se puede" para notas menores a 4
 */
 
-function mostrar()
-{
+function mostrar() {
 	/* Declaro las variables. */
 	let notaAleatoria;
 	let notaExcelente;
@@ -18,7 +17,7 @@ function mostrar()
 
 	/* Con la siguiente linea de codigo agrego un valor aleatorio entre
 	1 y 10 a la variable numerosAletorios. */
-	notaAleatoria =	Math.floor(Math.random() * 10) + 1;
+	notaAleatoria = Math.floor(Math.random() * 10) + 1;
 
 	/* Asigno a las variables faltantes el valor correspondiente. */
 	notaExcelente = "EXCELENTE";
@@ -29,13 +28,18 @@ function mostrar()
 	Uso If Else anidado (no la considero esta tecnica como buena 
 	practica, pero me queda comodo en este ejercicio ya que tampoco
 	me gustan los If sueltos o separados por una linea vacia). */
-	  if (notaAleatoria >= 9) {
+	if (notaAleatoria > 8)
+	{
 		alert(notaExcelente + " (" + notaAleatoria + ").");
-	  } else 
-	  		if (notaAleatoria >= 5 & notaAleatoria <= 8) {
-				alert(notaAprobado + " (" + notaAleatoria + ").");
-	  } else
-	  		if (notaAleatoria <= 4) {
+	} else 
+	{
+		if (notaAleatoria > 4 & notaAleatoria < 9)
+		{
+			alert(notaAprobado + " (" + notaAleatoria + ").");
+		} else
+			{
 				alert(notaDesaprobado + " (" + notaAleatoria + ").");
-	  }
+			}
+	}
+
 }
