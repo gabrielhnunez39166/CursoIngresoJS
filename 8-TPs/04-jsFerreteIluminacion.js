@@ -28,16 +28,19 @@ function CalcularPrecio ()
     marca = document.getElementById("Marca").value;
 
     //Operaciones de descuento mediante un if.
-    if (cantidadDeLamparas >= 6){
+    if (cantidadDeLamparas > 5 & marca == "Osram")
+    {
         descuento = (cantidadDeLamparas * lamparas) * 50 / 100;
         mensaje = "El total a pagar es de: $" + descuento.toFixed(2);
         document.getElementById("txtIdprecioDescuento").value = mensaje;
 
-    } else if (cantidadDeLamparas == 5 & marca == "ArgentinaLuz") {
+    } else if (cantidadDeLamparas == 5 & marca == "ArgentinaLuz")
+        {
             descuento = (cantidadDeLamparas * lamparas) * 40 / 100;
             mensaje = "El total a pagar es de: $" + descuento.toFixed(2);
             document.getElementById("txtIdprecioDescuento").value = mensaje;
-        } else {
+        } else 
+        {
             descuento = (cantidadDeLamparas * lamparas) * 30 / 100;
             mensaje = "El total a pagar es de: $" + descuento.toFixed(2);
             document.getElementById("txtIdprecioDescuento").value = mensaje;
