@@ -14,75 +14,65 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  */
 function CalcularPrecio () 
 {
-    //Declaro las variables.
- 	let lamparas;
+    //Declaro las variables del enunciado
     let cantidadDeLamparas;
-    let descuento;
-    let resultado;
     let marca;
-    let mensaje;
+    let precioConDescuento;
 
-    //Asigno el valor de las variables y parseo en el caso de ser necesario.
-    lamparas = 35;
+    //Asigno valor a las variables
     cantidadDeLamparas = document.getElementById("txtIdCantidad").value;
-    cantidadDeLamparas = parseInt(cantidadDeLamparas);
-    marca = document.getElementById("Marca").value;
+    marca = document.getElementById("Marca");
+    precioConDescuento = document.getElementById("txtIdprecioDescuento");
 
-    //Operaciones de descuento mediante if.
     if (cantidadDeLamparas > 5)
     {
-        descuento = lamparas * 50 / 100;
-        resultado = (cantidadDeLamparas * lamparas) - descuento;
-        mensaje = "El total a pagar es de: $" + resultado.toFixed(2);
-        document.getElementById("txtIdprecioDescuento").value = mensaje;
 
-    } else if (cantidadDeLamparas == 5 & marca == "ArgentinaLuz")
+    }
+    else
+    {
+        if (cantidadDeLamparas == 5)
         {
-            descuento = lamparas * 40 / 100;
-            resultado = (cantidadDeLamparas * lamparas) - descuento;
-            mensaje = "El total a pagar es de: $" + resultado.toFixed(2);
-            document.getElementById("txtIdprecioDescuento").value = mensaje;
-
-        } else if (cantidadDeLamparas == 5 & marca != "ArgentinaLuz")
+            if (marca == "ArgentinaLuz")
             {
-                descuento = lamparas * 30 / 100;
-                resultado = (cantidadDeLamparas * lamparas) - descuento;
-                mensaje = "El total a pagar es de: $" + resultado.toFixed(2);
-                document.getElementById("txtIdprecioDescuento").value = mensaje;
+                
+            }
+            else
+            {
 
-            } else if (cantidadDeLamparas == 4 & (marca == "ArgentinaLuz" || marca == "FelipeLamparas"))
+            }
+        }
+        else
+        {
+            if (cantidadDeLamparas == 4) {
+                if (marca == "ArgentinaLuz" || marca == "FelipeLamparas")
                 {
-                    descuento = lamparas * 25 / 100;
-                    resultado = (cantidadDeLamparas * lamparas) - descuento;
-                    mensaje = "El total a pagar es de: $" + resultado.toFixed(2);
-                    document.getElementById("txtIdprecioDescuento").value = mensaje;
-
-                } else if (cantidadDeLamparas == 4 & (marca != "ArgentinaLuz" || marca != "FelipeLamparas"))
+                    
+                }
+                else
+                {
+    
+                }
+            }
+            else
+            {
+                if (cantidadDeLamparas == 3) {
+                    if (marca == "ArgentinaLuz")
                     {
-                        descuento = lamparas * 20 / 100;
-                        resultado = (cantidadDeLamparas * lamparas) - descuento;
-                        mensaje = "El total a pagar es de: $" + resultado.toFixed(2);
-                        document.getElementById("txtIdprecioDescuento").value = mensaje;
-
-                    } else if (cantidadDeLamparas == 3 & marca == "ArgentinaLuz")
+                    
+                    }
+                    else
+                    {
+                        if (marca == "FelipeLamparas")
                         {
-                            descuento = lamparas * 15 / 100;
-                            resultado = (cantidadDeLamparas * lamparas) - descuento;
-                            mensaje = "El total a pagar es de: $" + resultado.toFixed(2);
-                            document.getElementById("txtIdprecioDescuento").value = mensaje;
                             
-                        } else if (cantidadDeLamparas == 3 & marca == "FelipeLamparas")
-                            {
-                                descuento = lamparas * 10 / 100;
-                                resultado = (cantidadDeLamparas * lamparas) - descuento;
-                                mensaje = "El total a pagar es de: $" + resultado.toFixed(2);
-                                document.getElementById("txtIdprecioDescuento").value = mensaje;
-                                
-                            } else if (cantidadDeLamparas == 3 & (marca != "ArgentinaLuz" || marca != "FelipeLamparas"))
-                                {
-                                    descuento = lamparas * 5 / 100;
-                                    resultado = (cantidadDeLamparas * lamparas) - descuento;
-                                    mensaje = "El total a pagar es de: $" + resultado.toFixed(2);
-                                    document.getElementById("txtIdprecioDescuento").value = mensaje;
-                                }
+                        }
+                        else
+                        {
+
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
