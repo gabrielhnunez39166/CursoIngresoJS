@@ -14,19 +14,22 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  */
 function CalcularPrecio () 
 {
-    //Declaro las variables del enunciado
+    //Declaro las variables del enunciado.
     let cantidadDeLamparas;
     let marca;
-    let precioConDescuento;
+    let precioLamparas;
+    let descuentoLamparas;
+    let TotalAPagar;
 
-    //Asigno valor a las variables
+    //Asigno valor a las variables y hago el parseo correspondiente.
     cantidadDeLamparas = document.getElementById("txtIdCantidad").value;
-    marca = document.getElementById("Marca");
-    precioConDescuento = document.getElementById("txtIdprecioDescuento");
+    cantidadDeLamparas = parseInt(cantidadDeLamparas);
+    precioLamparas = 35;
+    marca = document.getElementById("Marca").value;
 
     if (cantidadDeLamparas > 5)
     {
-
+        descuentoLamparas = precioLamparas * 0.5;
     }
     else
     {
@@ -34,23 +37,24 @@ function CalcularPrecio ()
         {
             if (marca == "ArgentinaLuz")
             {
-                
+                descuentoLamparas = precioLamparas * 0.6;
             }
             else
             {
-
+                descuentoLamparas = precioLamparas * 0.7;
             }
         }
         else
         {
-            if (cantidadDeLamparas == 4) {
+            if (cantidadDeLamparas == 4)
+            {
                 if (marca == "ArgentinaLuz" || marca == "FelipeLamparas")
                 {
-                    
+                    descuentoLamparas = precioLamparas * 0.75;
                 }
                 else
                 {
-    
+                    descuentoLamparas = precioLamparas * 0.8;
                 }
             }
             else
@@ -58,21 +62,32 @@ function CalcularPrecio ()
                 if (cantidadDeLamparas == 3) {
                     if (marca == "ArgentinaLuz")
                     {
-                    
+                        descuentoLamparas = precioLamparas * 0.85;
                     }
                     else
                     {
                         if (marca == "FelipeLamparas")
                         {
-                            
+                            descuentoLamparas = precioLamparas * 0.9;
                         }
                         else
                         {
-
+                            descuentoLamparas = precioLamparas * 0.95;
                         }
                     }
                 }
             }
         }
     }
-}
+    TotalAPagar = cantidadDeLamparas * descuentoLamparas;
+
+    if (TotalAPagar > 119)
+    {
+        TotalAPagar = TotalAPagar + (TotalAPagar * 0.1);
+        document.getElementById("txtIdprecioDescuento").value = "IIBB Usted pago $" + TotalAPagar.toFixed(2);
+    }
+    else
+    {
+        document.getElementById("txtIdprecioDescuento").value = "Usted debe pagar la suma de $" + TotalAPagar.toFixed(2);
+    }
+} //Fin de la funcion.
