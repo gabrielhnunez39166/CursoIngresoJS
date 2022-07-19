@@ -18,46 +18,46 @@ function mostrar() {
 	} 
 	else 
 	{
-		if (edadIngresada > 12 && edadIngresada <18) 
+		if (edadIngresada < 18) 
 		{
 			mensaje = "Usted es adolescente";
 
 			if (edadIngresada == 17)
 			{
-				mensaje =  mensaje + " último año!!!";
+				mensaje += " último año!!!";
 			}
 		}
 		else
 		{
 			if (edadIngresada > 17)
 			{
-				mensaje = "Tenes edad de laburar";
+				mensaje = "Tenes edad de laburar!!";
 
 				if (edadIngresada == 33)
 				{
-					mensaje = mensaje + " como cristo";
+					mensaje += " como cristo!!";
 				}
 				else 
 				{
 					if (edadIngresada > 60)
 					{
-						mensaje = "A jubilarse";
+						mensaje += " A jubilarse!!";
 					}
 					else 
 					{
 						if (edadIngresada == 88)
 						{
-							mensaje = "Lindo número";
+							mensaje += " Lindo número!!";
 						}
 					}
 				}
 			}
 		}
-
-		if (edadIngresada%2 == 0)
-		{
-			mensaje = mensaje + " sos par";
-		}
+	}
+	
+	if (edadIngresada%2 == 0)
+	{
+		mensaje += " sos par!!!";
 	}
 
 	alert(mensaje);

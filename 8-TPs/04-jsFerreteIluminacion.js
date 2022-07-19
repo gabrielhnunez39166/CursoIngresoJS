@@ -2,7 +2,7 @@
 Nuñez Hugo Gabriel
 TP 4
 
-4.Para el departamento de iluminación:
+4. Para el departamento de iluminación:
 Tomando en cuenta que todas las lámparas están en oferta al mismo precio de $35 pesos final.
 A.	Si compra 6 o más  lamparitas bajo consumo tiene un descuento del 50%. 
 B.	Si compra 5  lamparitas bajo consumo marca "ArgentinaLuz" se hace un descuento del 40 % y si es de otra marca el descuento es del 30%.
@@ -27,67 +27,31 @@ function CalcularPrecio ()
     precioLamparas = 35;
     marca = document.getElementById("Marca").value;
 
-    if (cantidadDeLamparas > 5)
+    switch (cantidadDeLamparas)
     {
-        descuentoLamparas = precioLamparas * 0.5;
-    }
-    else
-    {
-        if (cantidadDeLamparas == 5)
-        {
-            if (marca == "ArgentinaLuz")
+        case 5:
+            switch (marca)
             {
-                descuentoLamparas = precioLamparas * 0.6;
+                case "ArgentinaLuz":
+                    descuentoLamparas = 0.4;
+                break;
+                default:
+                    descuentoLamparas = 0.3;
+                break;
             }
-            else
-            {
-                descuentoLamparas = precioLamparas * 0.7;
+        break;
+        case 4:
+            switch (marca) {
+                case "ArgentinaLuz":
+                    descuentoLamparas = 0.25;
+                break;
+                default:
+                    descuentoLamparas = 0.2;
+                break;
             }
-        }
-        else
-        {
-            if (cantidadDeLamparas == 4)
-            {
-                if (marca == "ArgentinaLuz" || marca == "FelipeLamparas")
-                {
-                    descuentoLamparas = precioLamparas * 0.75;
-                }
-                else
-                {
-                    descuentoLamparas = precioLamparas * 0.8;
-                }
-            }
-            else
-            {
-                if (cantidadDeLamparas == 3) {
-                    if (marca == "ArgentinaLuz")
-                    {
-                        descuentoLamparas = precioLamparas * 0.85;
-                    }
-                    else
-                    {
-                        if (marca == "FelipeLamparas")
-                        {
-                            descuentoLamparas = precioLamparas * 0.9;
-                        }
-                        else
-                        {
-                            descuentoLamparas = precioLamparas * 0.95;
-                        }
-                    }
-                }
-            }
-        }
-    }
-    TotalAPagar = cantidadDeLamparas * descuentoLamparas;
-
-    if (TotalAPagar > 119)
-    {
-        TotalAPagar = TotalAPagar + (TotalAPagar * 0.1);
-        document.getElementById("txtIdprecioDescuento").value = "IIBB Usted pago $" + TotalAPagar.toFixed(2);
-    }
-    else
-    {
-        document.getElementById("txtIdprecioDescuento").value = "Usted debe pagar la suma de $" + TotalAPagar.toFixed(2);
+        break;
+        case 3:
+            
+        break;
     }
 } //Fin de la funcion.
