@@ -19,7 +19,8 @@ function mostrar()
 
 	/* Declaro la sentencia Switch y a cada mes le agrego el mensaje a
 	mostrar por pantalla. */
-	switch (mesDelAnio) {
+	switch (mesDelAnio)
+	{
 		case "Enero":
 		case "Febrero":
 		case "Marzo":

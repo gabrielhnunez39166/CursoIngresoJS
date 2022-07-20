@@ -9,19 +9,22 @@ function mostrar()
 {
 	/* Declaro la variable. */
 	let destinoIngresado;
+	let mensaje;
 	
 	/* Asigno el valor a la variable. */
 	destinoIngresado = document.getElementById("txtIdDestino").value;
+	mensaje = "";
 
 	/* Declaro la sentencia Switch para los destinos. */
-	switch (destinoIngresado) {
+	switch (destinoIngresado)
+	{
 		case "Mar del plata":
 		case "Cataratas":
-			alert("En " + destinoIngresado + " hace CALOR.");
+			mensaje = "En " + destinoIngresado + " hace CALOR.";
 			break;
-		case "Bariloche":
-		case "Ushuaia":
-			alert("En " + destinoIngresado + " hace FRIO.");
+		default:
+			mensaje = "En " + destinoIngresado + " hace FRIO.";
 			break;
 	}
+	alert(mensaje);
 }

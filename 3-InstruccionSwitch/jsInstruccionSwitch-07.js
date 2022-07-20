@@ -10,23 +10,27 @@ function mostrar()
 {
 	/* Declaro la variable. */
 	let destinoIngresado;
+	let mensaje;
 	
 	/* Asigno el valor a la variable. */
 	destinoIngresado = document.getElementById("txtIdDestino").value;
+	mensaje = "";
 
 	/* Declaro la sentencia Switch para los destinos. */
-	switch (destinoIngresado) {
+	switch (destinoIngresado)
+	{
 		case "Bariloche":
-			alert(destinoIngresado + " se encuentra en el Este.");
+			mensaje = destinoIngresado + " se encuentra en el Este.";
 			break;
 		case "Cataratas":
-			alert(destinoIngresado + " se encuentra en el Norte.");
+			mensaje = destinoIngresado + " se encuentra en el Norte.";
 			break;
 		case "Mar del plata":
-			alert(destinoIngresado + " se encuentra en el Oeste.");
+			mensaje = destinoIngresado + " se encuentra en el Oeste.";
 			break;
 		case "Ushuaia":
-			alert(destinoIngresado + " se encuentra en el Sur.");
+			mensaje = destinoIngresado + " se encuentra en el Sur.";
 			break;
 	}
+	alert(mensaje);
 }

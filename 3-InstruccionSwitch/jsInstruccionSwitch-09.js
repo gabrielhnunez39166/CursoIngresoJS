@@ -22,14 +22,83 @@ function mostrar()
 	/* Declaro la variable. */
 	let destinoIngresado;
 	let estacionIngresada;
+	let precioBaseEstadia;
+	let precioFinal;
+	let descuento;
+	let aumento;
+	let mensaje;
 
 	/* Asigno el valor a la variable. */
 	destinoIngresado = document.getElementById("txtIdDestino").value;
 	estacionIngresada = document.getElementById("txtIdEstacion").value;
+	precioBaseEstadia = 15000;
+	precioFinal = 0;
+	descuento = 0;
+	aumento = 0;
 
 	/* Declaro la sentencia Switch para los destinos y las estaciones. */
-	switch (destinoIngresado) {
-		case "Mar del plata":
-	}
+	switch (estacionIngresada)
+	{
+		case "Invierno":
+			switch (destinoIngresado)
+			{
+				case "Bariloche":
+					aumento = precioBaseEstadia * 20 / 100;
+					precioFinal = precioBaseEstadia + aumento;
+					break;
 
+				case "Cataratas":
+				case "Cordoba":
+					descuento = precioBaseEstadia * 10 / 100;
+					precioFinal = precioBaseEstadia - descuento;
+					break;
+
+				case "Mar del plata":
+					descuento = precioBaseEstadia * 20 / 100;
+					precioFinal = precioBaseEstadia - descuento;
+					break;
+			}
+		break;
+
+		case "Verano":
+			switch (destinoIngresado)
+			{
+				case "Bariloche":
+					descuento = precioBaseEstadia * 20 / 100;
+					precioFinal = precioBaseEstadia - descuento;
+					break;
+				
+				case "Cataratas":
+				case "Cordoba":
+					aumento = precioBaseEstadia * 10 / 100;
+					precioFinal = precioBaseEstadia + aumento;
+					break;
+
+				case "Mar del plata":
+					aumento = precioBaseEstadia * 20 / 100;
+					precioFinal = precioBaseEstadia + aumento;
+					break;
+			}
+			break
+
+		case "Otoño":
+		case "Primavera":
+			switch (destinoIngresado)
+			{
+				case "Bariloche":
+				case "Cataratas":
+				case "Mar del plata":
+					aumento = precioBaseEstadia * 10 / 100;
+					precioFinal = precioBaseEstadia + aumento;
+					break;
+
+				case "Cordoba":
+					precioFinal = precioBaseEstadia;
+					break;
+			}
+			break;
+	}
+	
+	mensaje = "El precio final del viaje es de $" + precioFinal;
+	alert(mensaje);
 }
