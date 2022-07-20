@@ -18,14 +18,17 @@ function CalcularPrecio ()
     let cantidadDeLamparas;
     let marca;
     let precioLamparas;
-    let descuentoLamparas;
+    let descuentoPorLampara;
     let TotalAPagar;
+    let mensaje;
 
     //Asigno valor a las variables y hago el parseo correspondiente.
     cantidadDeLamparas = document.getElementById("txtIdCantidad").value;
     cantidadDeLamparas = parseInt(cantidadDeLamparas);
     precioLamparas = 35;
     marca = document.getElementById("Marca").value;
+    descuentoPorLampara = 0;
+    TotalAPagar = 0;
 
     switch (cantidadDeLamparas)
     {
@@ -33,25 +36,72 @@ function CalcularPrecio ()
             switch (marca)
             {
                 case "ArgentinaLuz":
-                    descuentoLamparas = 0.4;
-                break;
+                    descuentoPorLampara = cantidadDeLamparas * (precioLamparas * 40 / 100);
+                    break;
                 default:
-                    descuentoLamparas = 0.3;
-                break;
+                    descuentoPorLampara = cantidadDeLamparas * (precioLamparas * 30 / 100);
+                    break;
             }
-        break;
+            break;
+
         case 4:
-            switch (marca) {
+            switch (marca)
+            {
                 case "ArgentinaLuz":
-                    descuentoLamparas = 0.25;
-                break;
+                case "FelipeLamparas":
+                    descuentoPorLampara = cantidadDeLamparas * (precioLamparas * 25 / 100);
+                    break;
                 default:
-                    descuentoLamparas = 0.2;
-                break;
+                    descuentoPorLampara = cantidadDeLamparas * (precioLamparas * 20 / 100);
+                    break;
             }
-        break;
+            break;
+
         case 3:
-            
-        break;
+            switch (marca)
+            {
+                case "ArgentinaLuz":
+                    descuentoPorLampara = cantidadDeLamparas * (precioLamparas * 15 / 100);
+                    break;
+                case "FelipeLamparas":
+                    descuentoPorLampara = cantidadDeLamparas * (precioLamparas * 10 / 100);
+                    break;
+                default:
+                    descuentoPorLampara = cantidadDeLamparas * (precioLamparas * 5 / 100);
+            }            
+            break;
+        
+        case 2:
+        case 1:
+        case 0:
+            switch (marca)
+            {
+                default:
+                    descuentoPorLampara =  cantidadDeLamparas * (precioLamparas * 0 / 100);
+                    break;
+            }
+            break;
+        
+        default:
+            switch (marca) {
+                default:
+                    descuentoPorLampara = cantidadDeLamparas * (precioLamparas * 50 / 100);
+                    break;
+            }
+            break;
+    }
+
+    TotalAPagar = precioLamparas * cantidadDeLamparas - (descuentoPorLampara);
+
+    if (TotalAPagar > 120)
+    {
+        TotalAPagar = TotalAPagar + (TotalAPagar * 10 / 100);
+        mensaje = "IIBB Usted pago $" + TotalAPagar.toFixed(2);
+        document.getElementById("txtIdprecioDescuento").value = mensaje;
+    }
+    else
+    {
+        mensaje = "Usted debe pagar la suma de $" + TotalAPagar.toFixed(2);
+        document.getElementById("txtIdprecioDescuento").value = mensaje;
     }
 } //Fin de la funcion.
