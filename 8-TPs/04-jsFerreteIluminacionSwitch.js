@@ -17,108 +17,81 @@ function CalcularPrecio ()
     //Declaro las variables del enunciado.
     let cantidadDeLamparas;
     let marca;
-    let precioLamparasSinDescuento;
+    let precioLamparas;
     let descuentoPorLampara;
     let TotalAPagar;
     let mensaje;
-    let descuento;
 
     //Asigno valor a las variables y hago el parseo correspondiente.
     cantidadDeLamparas = document.getElementById("txtIdCantidad").value;
     cantidadDeLamparas = parseInt(cantidadDeLamparas);
-    precioLamparasSinDescuento = 35;
+    precioLamparas = 35;
     marca = document.getElementById("Marca").value;
     descuentoPorLampara = 0;
     TotalAPagar = 0;
-    descuento = 0;
 
-    //Switch filtrado por marca
-
-    switch (marca)
+    switch (cantidadDeLamparas)
     {
-        case "ArgentinaLuz":
-            switch (cantidadDeLamparas)
+        case 5:
+            switch (marca)
             {
-                case 5:
-                    descuentoPorLampara = 40;
+                case "ArgentinaLuz":
+                    descuentoPorLampara = cantidadDeLamparas * (precioLamparas * 40 / 100);
                     break;
-                
-                case 4:
-                    descuentoPorLampara = 25;
-                    break;
-
-                case 3:
-                    descuentoPorLampara = 15;
-                    break;
-
-                case 2:
-                case 1:
-                case 0:
-                    descuentoPorLampara = 1;
-                    break;
-                
                 default:
-                    descuentoPorLampara = 50;
+                    descuentoPorLampara = cantidadDeLamparas * (precioLamparas * 30 / 100);
                     break;
             }
             break;
 
-        case "FelipeLamparas":
-            switch (cantidadDeLamparas)
+        case 4:
+            switch (marca)
             {
-                case 5:
-                    descuentoPorLampara = 30;
+                case "ArgentinaLuz":
+                case "FelipeLamparas":
+                    descuentoPorLampara = cantidadDeLamparas * (precioLamparas * 25 / 100);
                     break;
-                
-                case 4:
-                    descuentoPorLampara = 25;
-                    break;
-
-                case 3:
-                    descuentoPorLampara = 10;
-                    break;
-
-                case 2:
-                case 1:
-                case 0:
-                    descuentoPorLampara = 1;
-                    break;
-                
                 default:
-                    descuentoPorLampara = 50;
+                    descuentoPorLampara = cantidadDeLamparas * (precioLamparas * 20 / 100);
                     break;
             }
             break;
 
+        case 3:
+            switch (marca)
+            {
+                case "ArgentinaLuz":
+                    descuentoPorLampara = cantidadDeLamparas * (precioLamparas * 15 / 100);
+                    break;
+                case "FelipeLamparas":
+                    descuentoPorLampara = cantidadDeLamparas * (precioLamparas * 10 / 100);
+                    break;
+                default:
+                    descuentoPorLampara = cantidadDeLamparas * (precioLamparas * 5 / 100);
+            }            
+            break;
+        
+        case 2:
+        case 1:
+        case 0:
+            switch (marca)
+            {
+                default:
+                    descuentoPorLampara =  cantidadDeLamparas * (precioLamparas * 0 / 100);
+                    break;
+            }
+            break;
+        
         default:
-            switch (cantidadDeLamparas)
-            {
-                case 5:
-                    descuentoPorLampara = 30;
-                    break;
-                    
-                case 4:
-                    descuentoPorLampara = 20;
-                    break;
-    
-                case 3:
-                    descuentoPorLampara = 5;
-                    break;
-    
-                case 2:
-                case 1:
-                case 0:
-                    descuentoPorLampara = 1;
-                    break;
-                    
+            switch (marca) {
                 default:
-                    descuentoPorLampara = 50;
+                    descuentoPorLampara = cantidadDeLamparas * (precioLamparas * 50 / 100);
                     break;
             }
             break;
     }
-    descuento = cantidadDeLamparas / 100 * descuentoPorLampara;
-    TotalAPagar = precioLamparasSinDescuento * cantidadDeLamparas - (descuento);
+
+    TotalAPagar = precioLamparas * cantidadDeLamparas - (descuentoPorLampara);
 
     if (TotalAPagar > 120)
     {
@@ -131,5 +104,4 @@ function CalcularPrecio ()
         mensaje = "Usted debe pagar la suma de $" + TotalAPagar.toFixed(2);
         document.getElementById("txtIdprecioDescuento").value = mensaje;
     }
-
 } //Fin de la funcion.
